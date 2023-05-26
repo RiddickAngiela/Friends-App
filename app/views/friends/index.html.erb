@@ -1,0 +1,24 @@
+
+
+<% if user_signed_in? %>
+
+<div id="friends">
+
+  <% @friends.each do |friend| %>
+    <%= render friend %>
+
+ <%= link_to "Show this friend", friend %>
+
+  <% end %>
+
+</div>
+<br/>
+
+<%= link_to "New friend", new_friend_path , class:"btn btn-secondary"%>
+
+<% else %>
+
+  <h1> Hello</h1>
+This is my first rails page....
+
+<% end %>

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+  <%= link_to 'Friend App', root_path, class:'navbar-brand' %>
+    <%= link_to "About Us",home_about_path, class:'nav-item' %>
+
+       
+
+        <% if user_signed_in? %>
+        <%= link_to "AddFriend",new_friend_path, class:'nav-item' %>
+
+        <%= link_to "Sign Out",destroy_user_session_path, method: :delete, class:'nav-item' %> 
+        <%= link_to "Edit Profile",edit_user_registration_path, class:'nav-item' %> 
+
+        <% else %>
+
+      <%= link_to "Sign Up",new_user_registration_path, class:'nav-item' %> 
+      <%= link_to "Sign In",new_user_session_path, class:'nav-item' %> 
+       
+        <% end %>
+
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
